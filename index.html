@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Razi Al Kindi Nadra — Product × Data</title>
+<meta name="description" content="Portfolio Razi — menjembatani product development dan data science. Ex-Product Development Intern di Telkomsel, pembangun project machine learning & data analysis." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF6;
+    --ink:#1B2027;
+    --ink-soft:#4A5159;
+    --ink-muted:#8A8F95;
+    --accent:#2D5F3F;
+    --accent-wash:#E8EDE8;
+    --highlight:#C8501B;
+    --highlight-wash:#F6E7DD;
+    --border:#E5E2D9;
+    --card:#FFFFFF;
+    --max:1080px;
+    --pad-x:clamp(20px, 5vw, 48px);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter Tight',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:var(--bg);}
+
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad-x);}
+
+  /* ---------- Header ---------- */
+  header{
+    padding:28px 0 24px;
+    border-bottom:1px solid var(--border);
+    position:sticky;top:0;
+    background:rgba(250,250,246,0.92);
+    backdrop-filter:blur(8px);
+    z-index:50;
+  }
+  .nav{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;}
+  .brand{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:1.25rem;
+    letter-spacing:-0.01em;
+  }
+  .nav-links{display:flex;gap:28px;font-size:0.875rem;color:var(--ink-soft);}
+  .nav-links a{transition:color 0.2s;}
+  .nav-links a:hover{color:var(--accent);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:80px 0 64px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.45fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:var(--accent);
+    margin:0 0 28px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:24px;height:1px;background:var(--accent);
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:clamp(2.4rem, 6vw, 4.25rem);
+    line-height:1.04;
+    letter-spacing:-0.025em;
+    margin:0 0 24px;
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--accent);
+  }
+  .hero h1 em.alt{color:var(--highlight);}
+  .hero-lede{
+    font-size:1.125rem;
+    color:var(--ink-soft);
+    max-width:48ch;
+    margin:0 0 36px;
+    line-height:1.6;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .btn{
+    font-family:'Inter Tight',sans-serif;
+    font-size:0.9rem;font-weight:500;
+    padding:12px 22px;border-radius:3px;
+    transition:transform 0.15s, background 0.2s, color 0.2s;
+    border:1px solid var(--accent);
+  }
+  .btn-primary{background:var(--accent);color:var(--bg);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--accent);}
+  .btn-ghost:hover{background:var(--accent-wash);}
+  .hero-photo{
+    width:100%;max-width:300px;
+    aspect-ratio:4/5;object-fit:cover;
+    border-radius:6px;border:1px solid var(--border);
+    justify-self:end;
+    filter:grayscale(8%);
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:28px 48px;
+    padding-top:32px;
+    border-top:1px solid var(--border);
+  }
+  .meta-item{display:flex;flex-direction:column;gap:6px;}
+  .meta-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-muted);
+  }
+  .meta-value{font-size:0.95rem;color:var(--ink);font-weight:500;}
+  .status-dot{
+    display:inline-block;width:8px;height:8px;border-radius:50%;
+    background:var(--accent);margin-right:8px;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.4;}
+  }
+
+  /* ---------- Section base ---------- */
+  section{padding:96px 0;border-top:1px solid var(--border);}
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:56px;gap:24px;flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:clamp(1.75rem, 3.5vw, 2.5rem);
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  .section-count{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--ink-muted);
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.35fr 0.65fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about-prose p{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+    max-width:44ch;
+  }
+  .about-prose strong{color:var(--ink);font-weight:500;}
+  .about-stats{display:flex;flex-direction:column;gap:32px;}
+  .stat{
+    padding:20px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .stat:last-child{border-bottom:none;}
+  .stat-number{
+    font-family:'Fraunces',serif;
+    font-size:3rem;
+    line-height:1;
+    color:var(--ink);
+    margin-bottom:6px;
+    display:block;
+  }
+  .stat-number sup{
+    font-size:1rem;
+    color:var(--highlight);
+    margin-left:4px;
+    vertical-align:super;
+  }
+  .stat-desc{
+    font-size:0.9rem;
+    color:var(--ink-muted);
+    max-width:32ch;
+  }
+  .about-facts{
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:var(--card);
+    overflow:hidden;
+  }
+  .fact{
+    padding:26px 28px;
+    border-bottom:1px solid var(--border);
+    display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  }
+  .fact:last-child{border-bottom:none;}
+  .fact-num{
+    font-family:'Fraunces',serif;
+    font-size:2.25rem;line-height:1;color:var(--ink);
+    white-space:nowrap;
+  }
+  .fact-num sup{
+    font-size:0.9rem;color:var(--highlight);
+    vertical-align:super;margin-left:2px;
+  }
+  .fact-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;text-transform:uppercase;letter-spacing:0.07em;
+    color:var(--ink-muted);text-align:right;line-height:1.4;max-width:16ch;
+  }
+
+  /* ---------- Work ---------- */
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .filter-btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;
+    padding:8px 16px;border-radius:3px;cursor:pointer;
+    background:transparent;border:1px solid var(--border);color:var(--ink-soft);
+    transition:all 0.18s;
+  }
+  .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .filter-btn.is-active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+
+  .project{
+    padding:48px 0;
+    border-bottom:1px solid var(--border);
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:48px;
+  }
+  .project:last-child{border-bottom:none;}
+  .project-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.8rem;
+    color:var(--ink-muted);
+    padding-top:6px;
+  }
+  .project-body{display:flex;flex-direction:column;gap:22px;}
+  .project-title{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:1.875rem;
+    letter-spacing:-0.015em;
+    margin:0;
+    line-height:1.15;
+  }
+  .project-title a{transition:color 0.2s;}
+  .project-title a:hover{color:var(--accent);}
+  .project-tags{
+    display:flex;gap:8px;flex-wrap:wrap;margin-top:-10px;align-items:center;
+  }
+  .cat-badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.66rem;text-transform:uppercase;letter-spacing:0.06em;
+    padding:4px 10px;border-radius:2px;font-weight:500;
+  }
+  .cat-product{background:var(--highlight-wash);color:var(--highlight);}
+  .cat-data{background:var(--accent-wash);color:var(--accent);}
+  .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    text-transform:none;
+    letter-spacing:0.02em;
+    padding:4px 10px;
+    background:#F2F0E9;
+    color:var(--ink-soft);
+    border-radius:2px;
+  }
+  .project-blocks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    margin-top:6px;
+  }
+  .block-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-muted);
+    margin:0 0 10px;
+  }
+  .block-body{
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    margin:0;
+    line-height:1.6;
+  }
+  .project-result{
+    margin-top:6px;
+    padding:24px 28px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    display:flex;
+    align-items:baseline;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .result-metric{
+    font-family:'Fraunces',serif;
+    font-size:2rem;
+    line-height:1;
+    color:var(--accent);
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .result-desc{
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    flex:1;
+    min-width:200px;
+  }
+
+  /* ---------- Certifications ---------- */
+  .certs-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  .cert-card{
+    display:flex;align-items:center;gap:16px;
+    padding:20px 22px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:4px;
+    transition:transform 0.15s, border-color 0.2s;
+  }
+  .cert-card:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .cert-icon{
+    flex-shrink:0;
+    width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--accent-wash);color:var(--accent);
+    font-family:'JetBrains Mono',monospace;font-size:0.9rem;
+  }
+  .cert-text{flex:1;}
+  .cert-arrow{
+    margin-left:auto;color:var(--ink-muted);font-size:1.05rem;
+    transition:color 0.2s, transform 0.2s;
+  }
+  .cert-card:hover .cert-arrow{color:var(--accent);transform:translate(2px,-2px);}
+  .cert-name{font-size:0.98rem;color:var(--ink);font-weight:500;line-height:1.3;}
+  .cert-issuer{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;color:var(--ink-muted);
+    text-transform:uppercase;letter-spacing:0.06em;margin-top:3px;
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:48px;
+  }
+  .skill-group h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:1.125rem;
+    margin:0 0 20px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--border);
+    letter-spacing:-0.01em;
+  }
+  .skill-list{
+    list-style:none;
+    padding:0;margin:0;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .skill-list li{
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .skill-level{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    color:var(--ink-muted);
+    text-align:right;
+  }
+
+  /* ---------- Experience / Timeline ---------- */
+  .exp-item{
+    display:grid;grid-template-columns:210px 1fr;gap:48px;
+    padding:36px 0;border-bottom:1px solid var(--border);
+  }
+  .exp-item:first-child{padding-top:0;}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-side{display:flex;flex-direction:column;gap:6px;padding-top:6px;}
+  .exp-period{
+    font-family:'JetBrains Mono',monospace;font-size:0.75rem;
+    color:var(--accent);letter-spacing:0.03em;
+  }
+  .exp-place{
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.06em;
+  }
+  .exp-main{display:flex;flex-direction:column;}
+  .exp-role{
+    font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;
+    letter-spacing:-0.01em;margin:0 0 4px;line-height:1.2;
+  }
+  .exp-org{font-size:0.95rem;color:var(--ink-soft);font-weight:500;}
+  .exp-list{margin:14px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:9px;}
+  .exp-list li{font-size:0.94rem;color:var(--ink-soft);line-height:1.55;}
+  .exp-list li::marker{color:var(--accent);}
+
+  /* ---------- Contact ---------- */
+  .contact{padding:96px 0 80px;}
+  .contact-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:end;
+  }
+  .contact h2{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-style:italic;
+    font-size:clamp(2rem, 5vw, 3.25rem);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 24px;
+    max-width:14ch;
+  }
+  .contact h2 em{font-style:normal;color:var(--accent);}
+  .contact p{
+    color:var(--ink-soft);
+    margin:0 0 32px;
+    max-width:42ch;
+  }
+  .contact-links{
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .contact-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    border-bottom:1px solid var(--border);
+    font-size:1.05rem;
+    transition:color 0.2s, padding 0.2s;
+  }
+  .contact-link:hover{
+    color:var(--accent);
+    padding-left:6px;
+  }
+  .contact-link-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--ink-muted);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:32px 0;
+    border-top:1px solid var(--border);
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--ink-muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:780px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero-photo{order:-1;max-width:200px;justify-self:start;}
+    .about-grid,.contact-inner{grid-template-columns:1fr;gap:48px;}
+    .skills-grid{grid-template-columns:1fr;gap:32px;}
+    .certs-grid{grid-template-columns:1fr;}
+    .exp-item{grid-template-columns:1fr;gap:16px;}
+    .exp-item:first-child{padding-top:36px;}
+    .project{grid-template-columns:1fr;gap:20px;}
+    .project-blocks{grid-template-columns:1fr;gap:24px;}
+    .hero{padding:56px 0 48px;}
+    section{padding:72px 0;}
+    .nav-links{gap:18px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">Muhammad Razi Al Kindi Nadra</div>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#about">Tentang</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#organization">Organisasi</a>
+      <a href="#work">Proyek</a>
+      <a href="#certs">Sertifikat</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Product Development &nbsp;·&nbsp; Data &amp; Machine Learning</p>
+      <h1 id="hero-title">Muhammad Razi<br>Al Kindi Nadra</h1>
+      <p class="hero-lede">Mahasiswa Teknik Informatika Universitas Brawijaya dengan pengalaman di pengembangan produk digital dan solusi berbasis data &amp; machine learning.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">Lihat Proyek</a>
+        <a href="https://github.com/razialkindi" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Status</span>
+          <span class="meta-value"><span class="status-dot" aria-hidden="true"></span>Terbuka untuk peluang baru</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Lokasi</span>
+          <span class="meta-value">Malang, Indonesia</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Fokus</span>
+          <span class="meta-value">Product Analytics &amp; AI Products</span>
+        </div>
+      </div>
+    </div>
+    <img class="hero-photo" src="foto-razi.jpeg" alt="Foto Muhammad Razi Al Kindi Nadra" />
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="about-title">Tentang</h2>
+      <span class="section-count">01 / Profil</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-prose">
+        <p>Saya mahasiswa tingkat akhir <strong>Teknik Informatika Universitas Brawijaya</strong> yang berfokus pada titik temu antara <strong>product development</strong> dan <strong>data science</strong> — merumuskan produk yang tepat untuk dibangun, lalu memvalidasinya melalui data.</p>
+        <p>Sebagai <strong>Product Development Intern di Telkomsel</strong>, saya terlibat dalam eksplorasi dan validasi ide produk digital untuk ekosistem MyTelkomsel mini-apps, mencakup market research, penyusunan product brief, customer journey, hingga revenue projection. Konsep produk yang saya kembangkan turut dipresentasikan kepada jajaran <strong>Board of Directors</strong> pada Telkomsel Traction Day.</p>
+        <p>Di bidang data, saya membangun beragam <strong>project machine learning end-to-end</strong> — dari analisis dan pemodelan hingga implementasi — termasuk sistem rekomendasi berbasis AI yang dikembangkan sebagai aplikasi web. Saya merupakan alumnus program <strong>DBS Foundation × Dicoding Coding Camp</strong> (Machine Learning) dengan sejumlah sertifikasi di bidang analisis data dan machine learning.</p>
+      </div>
+
+      <div class="about-facts" aria-label="Ringkasan fakta">
+        <div class="fact">
+          <span class="fact-num">3.73<sup>/4.00</sup></span>
+          <span class="fact-label">IPK · Teknik Informatika, UB</span>
+        </div>
+        <div class="fact">
+          <span class="fact-num">10<sup>+</sup></span>
+          <span class="fact-label">Project product &amp; data</span>
+        </div>
+        <div class="fact">
+          <span class="fact-num">6</span>
+          <span class="fact-label">Sertifikat Dicoding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="exp-title">Pengalaman</h2>
+      <span class="section-count">02 / Pengalaman</span>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-side">
+        <span class="exp-period">Jul 2025 – Nov 2025</span>
+        <span class="exp-place">Jakarta, Indonesia</span>
+      </div>
+      <div class="exp-main">
+        <h3 class="exp-role">Product Development Intern</h3>
+        <div class="exp-org">Telkomsel (PT Telekomunikasi Selular)</div>
+        <ul class="exp-list">
+          <li>Melakukan product ideation, market research, dan competitor analysis untuk produk digital baru (Biometric Photo Marketplace, Cloud Games, Dapur Pintar); menyusun product brief, customer journey, dan revenue projection untuk ekosistem MyTelkomsel mini-apps.</li>
+          <li>Terlibat dalam field research di Malang untuk menggali insight pelanggan dan memvalidasi kebutuhan pengguna — menerjemahkan temuan kualitatif menjadi target persona, value proposition, dan pain-point mapping.</li>
+          <li>Mempresentasikan konsep produk pada Telkomsel Traction Day di hadapan Board of Directors (BOD) untuk menyempurnakan product positioning dan strategi go-to-market.</li>
+          <li>Melakukan competitor research &amp; feature benchmarking (FanMate, GameQoo, AI Travel Assistant) serta functional dan AI performance testing pada fitur AI Travel Assistant, dengan rekomendasi perbaikan berbasis bukti.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-side">
+        <span class="exp-period">Feb 2025 – Jun 2025</span>
+        <span class="exp-place">Work from Home</span>
+      </div>
+      <div class="exp-main">
+        <h3 class="exp-role">Machine Learning Cohort</h3>
+        <div class="exp-org">DBS Foundation × Dicoding Coding Camp</div>
+        <ul class="exp-list">
+          <li>Mempelajari fundamental data processing, machine learning, dan deep learning melalui program studi independen berbasis proyek.</li>
+          <li>Mengembangkan capstone project <em>Nutrilance</em> — sistem rekomendasi nutrisi berbasis AI — secara end-to-end, dari pemodelan hingga deployment.</li>
+          <li>Mengasah soft skills profesional: manajemen waktu, manajemen proyek, dan komunikasi efektif.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-side">
+        <span class="exp-period">2024</span>
+        <span class="exp-place">FILKOM, Univ. Brawijaya</span>
+      </div>
+      <div class="exp-main">
+        <h3 class="exp-role">Coordinator Team</h3>
+        <div class="exp-org">Mahasiswa Membangun Desa (MMD) FILKOM</div>
+        <ul class="exp-list">
+          <li>Mengoordinasikan tim mahasiswa multidisiplin untuk inisiatif pengembangan masyarakat di wilayah pedesaan.</li>
+          <li>Merencanakan dan mengawasi eksekusi program di bidang edukasi, implementasi teknologi untuk UMKM lokal, dan pemberdayaan masyarakat.</li>
+          <li>Menjadi penghubung utama antara mahasiswa, perangkat desa, dan dosen pembimbing.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORGANIZATION -->
+<section id="organization" aria-labelledby="org-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="org-title">Organisasi</h2>
+      <span class="section-count">03 / Organisasi</span>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-side">
+        <span class="exp-period">Mei 2024 – Des 2024</span>
+        <span class="exp-place">Malang, Indonesia</span>
+      </div>
+      <div class="exp-main">
+        <h3 class="exp-role">Staff of Public Relations</h3>
+        <div class="exp-org">ROBOTIIK FILKOM UB</div>
+        <ul class="exp-list">
+          <li>Mewakili organisasi dalam komunikasi eksternal, baik melalui media sosial maupun engagement langsung dengan pihak luar.</li>
+          <li>Mengembangkan kemampuan public speaking dan komunikasi persuasif untuk menyampaikan visi serta kegiatan organisasi kepada beragam audiens.</li>
+          <li>Membangun dan menjaga relasi dengan organisasi mitra, pembicara tamu, sponsor, dan komunitas kampus.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="work-title">Proyek terpilih</h2>
+      <span class="section-count">04 / Studi kasus</span>
+    </div>
+
+    <div class="filter-bar" role="group" aria-label="Filter proyek">
+      <button class="filter-btn is-active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="product">Product</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+    </div>
+
+    <div id="project-list">
+
+    <!-- Project 1 — Nutrilance -->
+    <article class="project" data-cat="product data">
+      <div class="project-num">01</div>
+      <div class="project-body">
+        <h3 class="project-title"><a href="https://github.com/razialkindi/Capstone-Project-Nutrilance" target="_blank" rel="noopener">Nutrilance — Sistem Rekomendasi Nutrisi Berbasis AI</a></h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-product">Product</span>
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">React.js</span><span class="tag">FastAPI</span><span class="tag">TensorFlow</span><span class="tag">PostgreSQL</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Masyarakat kesulitan memilih makanan sehat karena terlalu banyak pilihan dan minimnya personalisasi (choice overload).</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">End-to-end: user research → pembersihan data → model content-based filtering (TF-IDF + cosine similarity) → aplikasi web three-tier → deploy → presentasi.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">End-to-end</span>
+          <span class="result-desc">Web app yang memberi rekomendasi makanan personal dan <em>explainable</em> — menggabungkan product, data, dan development dalam satu produk.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 — HAR -->
+    <article class="project" data-cat="data">
+      <div class="project-num">02</div>
+      <div class="project-body">
+        <h3 class="project-title"><a href="https://github.com/razialkindi/Project-Jaringan-Saraf-Tiruan" target="_blank" rel="noopener">Human Activity Recognition (Neural Network)</a></h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">TensorFlow/Keras</span><span class="tag">NumPy</span><span class="tag">Wearable Sensors</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Mengklasifikasikan aktivitas fisik (berdiri, duduk, berjalan) dari data sensor wearable untuk health monitoring.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Memproses 92.000+ entri dataset MHEALTH (gyroscope ankle &amp; wrist), normalisasi &amp; segmentasi, neural network (64 neuron, ReLU + Softmax).</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">98.77%</span>
+          <span class="result-desc">Akurasi (macro F1 0.9877) — klasifikasi sempurna untuk kelas Sitting.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3 — Cloud Games -->
+    <article class="project" data-cat="product">
+      <div class="project-num">03</div>
+      <div class="project-body">
+        <h3 class="project-title">Cloud Games — Konsep Produk Digital (Telkomsel)</h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-product">Product</span>
+          <span class="tag">Market Research</span><span class="tag">Product Brief</span><span class="tag">Business Modeling</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Gamer menginginkan pengalaman gaming premium tanpa konsol/PC mahal atau download besar.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Memimpin ideation &amp; market research (TAM 46M → SAM 3M), menyusun persona, product brief, dan proyeksi revenue 3 tahun, serta konsep fitur (bundling, token).</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">Showcased&nbsp;ke&nbsp;BOD</span>
+          <span class="result-desc">Dipresentasikan di Telkomsel Traction Day langsung ke Board of Directors, dengan roadmap dua fase (Tencent Cloud Game → EA Sport).</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 4 — AI Travel Assistant -->
+    <article class="project" data-cat="product data">
+      <div class="project-num">04</div>
+      <div class="project-body">
+        <h3 class="project-title">AI Travel Assistant — Product Testing &amp; AI Evaluation (Telkomsel)</h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-product">Product</span>
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">Functional Testing</span><span class="tag">AI Evaluation</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Fitur AI yang sudah rilis belum tervalidasi performanya, terutama untuk pertanyaan berbasis gambar.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Menyusun test case di lokasi nyata (Blok M, Kota Tua); menguji akurasi, kelengkapan, kecepatan; mendokumentasikan kasus succeed/failed dengan bukti.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">Evidence&#8209;based</span>
+          <span class="result-desc">Menghasilkan rekomendasi perbaikan berbasis bukti — persimpangan product sense &amp; analytical rigor.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 5 — Used Car -->
+    <article class="project" data-cat="data">
+      <div class="project-num">05</div>
+      <div class="project-body">
+        <h3 class="project-title"><a href="https://github.com/razialkindi/car-price-prediction-ml" target="_blank" rel="noopener">Used Car Price Prediction</a></h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">scikit-learn</span><span class="tag">GridSearchCV</span><span class="tag">Random Forest</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Harga mobil bekas di Indonesia tidak transparan; pembeli &amp; penjual sulit menilai harga wajar.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Membandingkan Linear Regression, Decision Tree, Random Forest; tuning dengan GridSearchCV; analisis feature importance.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">97.19% R²</span>
+          <span class="result-desc">Model terbaik (Random Forest), mengidentifikasi faktor harga paling berpengaruh.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 6 — House Price -->
+    <article class="project" data-cat="data">
+      <div class="project-num">06</div>
+      <div class="project-body">
+        <h3 class="project-title"><a href="https://github.com/razialkindi/House-Price-Prediction" target="_blank" rel="noopener">House Price Prediction</a></h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">scikit-learn</span><span class="tag">EDA</span><span class="tag">Gradient Boosting</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Penentuan harga properti rumit &amp; kurang transparan; model yang akurat membantu pembeli, penjual, dan lembaga keuangan.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Preprocessing &amp; EDA pada California Housing dataset; membandingkan Linear Regression, Random Forest, dan Gradient Boosting.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">~90% R²</span>
+          <span class="result-desc">Akurasi prediksi tinggi; faktor harga utama: lokasi &amp; median income.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 7 — Book Recommendation -->
+    <article class="project" data-cat="data">
+      <div class="project-num">07</div>
+      <div class="project-body">
+        <h3 class="project-title"><a href="https://github.com/razialkindi/book-reccomendation-system" target="_blank" rel="noopener">Book Recommendation System</a></h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-data">Data</span>
+          <span class="tag">Collaborative Filtering</span><span class="tag">Content-Based</span><span class="tag">Cosine Similarity</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Pembaca kewalahan memilih buku (information overload), menurunkan engagement &amp; eksplorasi genre.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Sistem rekomendasi hybrid: collaborative filtering (matrix factorization) + content-based filtering (cosine similarity) dari rating &amp; metadata buku.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">Hybrid&nbsp;Recsys</span>
+          <span class="result-desc">Rekomendasi personal yang mendorong eksplorasi genre &amp; mencegah filter bubble.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 8 — Dapur Pintar -->
+    <article class="project" data-cat="product">
+      <div class="project-num">08</div>
+      <div class="project-body">
+        <h3 class="project-title">Dapur Pintar — Smart Kitchen App Concept (Telkomsel)</h3>
+        <div class="project-tags">
+          <span class="cat-badge cat-product">Product</span>
+          <span class="tag">Ideation</span><span class="tag">Market Research</span><span class="tag">Customer Journey</span>
+        </div>
+        <div class="project-blocks">
+          <div>
+            <p class="block-label">Konteks</p>
+            <p class="block-body">Ibu rumah tangga &amp; keluarga modern butuh ide masak harian, manajemen bahan, dan nutrisi yang praktis.</p>
+          </div>
+          <div>
+            <p class="block-label">Pendekatan</p>
+            <p class="block-body">Konsep aplikasi dapur pintar berbasis AI (foto bahan, voice search, hitung kalori); ideation → market research → product brief → poster → showcase.</p>
+          </div>
+        </div>
+        <div class="project-result">
+          <span class="result-metric">3.2&nbsp;Mn</span>
+          <span class="result-desc">Estimasi market (MAU wanita MyTelkomsel) dengan proyeksi revenue 3 tahun &amp; roadmap kolaborasi.</span>
+        </div>
+      </div>
+    </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs" aria-labelledby="certs-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="certs-title">Lisensi &amp; Sertifikat</h2>
+      <span class="section-count">05 / Kredensial</span>
+    </div>
+    <div class="certs-grid">
+      <a class="cert-card" href="https://www.dicoding.com/certificates/98XWED1D9XM3" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Analisis Data dengan Python</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+      <a class="cert-card" href="https://www.dicoding.com/certificates/MRZMNNWW3PYQ" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Visualisasi Data</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+      <a class="cert-card" href="https://www.dicoding.com/certificates/53XED25VKPRN" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Machine Learning untuk Pemula</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+      <a class="cert-card" href="https://www.dicoding.com/certificates/N9ZO9WRGRXG5" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Fundamental Deep Learning</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+      <a class="cert-card" href="https://www.dicoding.com/certificates/98XWED139XM3" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Machine Learning Terapan</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+      <a class="cert-card" href="https://www.dicoding.com/certificates/ERZRE3GLQXYV" target="_blank" rel="noopener"><span class="cert-icon" aria-hidden="true">✓</span><div class="cert-text"><div class="cert-name">Fundamental Pemrosesan Data</div><div class="cert-issuer">Dicoding</div></div><span class="cert-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="skills-title">Keahlian &amp; alat</h2>
+      <span class="section-count">06 / Toolkit</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>🔵 Product</h3>
+        <ul class="skill-list">
+          <li>Market &amp; Competitor Research <span class="skill-level">Practiced</span></li>
+          <li>User / Field Research <span class="skill-level">Practiced</span></li>
+          <li>Product Brief &amp; Ideation <span class="skill-level">Practiced</span></li>
+          <li>Customer Journey Mapping <span class="skill-level">Practiced</span></li>
+          <li>Business &amp; Revenue Modeling <span class="skill-level">Practiced</span></li>
+          <li>Stakeholder Presentation <span class="skill-level">Practiced</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>🟢 Data &amp; ML</h3>
+        <ul class="skill-list">
+          <li>Python (Pandas, NumPy) <span class="skill-level">Advanced</span></li>
+          <li>scikit-learn <span class="skill-level">Advanced</span></li>
+          <li>TensorFlow / Keras <span class="skill-level">Intermediate</span></li>
+          <li>SQL <span class="skill-level">Intermediate</span></li>
+          <li>Data Analysis &amp; EDA <span class="skill-level">Advanced</span></li>
+          <li>ML, Deep Learning, NLP/CV <span class="skill-level">Practiced</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>⚙️ Tools &amp; Viz</h3>
+        <ul class="skill-list">
+          <li>Streamlit <span class="skill-level">Advanced</span></li>
+          <li>Matplotlib / Seaborn <span class="skill-level">Advanced</span></li>
+          <li>Git &amp; GitHub <span class="skill-level">Daily</span></li>
+          <li>FastAPI / React.js <span class="skill-level">Practiced</span></li>
+          <li>Jupyter Notebook <span class="skill-level">Daily</span></li>
+          <li>Canva, Figma <span class="skill-level">Daily</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <h2 id="contact-title">Mari bicara soal <em>produk</em> dan <em>data</em>.</h2>
+        <p>Saya terbuka untuk peluang di product analytics, data science, atau product development. Silakan hubungi saya — saya senang berdiskusi.</p>
+      </div>
+
+      <div class="contact-links" role="list">
+        <a href="mailto:alkindirazi@gmail.com" class="contact-link" role="listitem">
+          <span>alkindirazi@gmail.com</span>
+          <span class="contact-link-meta">Email →</span>
+        </a>
+        <a href="https://github.com/razialkindi" class="contact-link" role="listitem" target="_blank" rel="noopener">
+          <span>github.com/razialkindi</span>
+          <span class="contact-link-meta">GitHub →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-razi-al-kindi-nadra/" class="contact-link" role="listitem" target="_blank" rel="noopener">
+          <span>linkedin.com/in/muhammad-razi-al-kindi-nadra</span>
+          <span class="contact-link-meta">LinkedIn →</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1i1o5hbiEsSclAAgYVmDE2-ZD3nChKW4L/view?usp=drive_link" class="contact-link" role="listitem" target="_blank" rel="noopener">
+          <span>Lihat CV lengkap</span>
+          <span class="contact-link-meta">PDF →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container nav">
+    <span>© 2026 Muhammad Razi Al Kindi Nadra</span>
+    <span>Product × Data · Malang, Indonesia</span>
+  </div>
+</footer>
+
+<script>
+  // Filter proyek berdasarkan kategori
+  const buttons = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('#project-list .project');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const f = btn.dataset.filter;
+      projects.forEach(function(p){
+        const cats = (p.dataset.cat || '').split(' ');
+        p.style.display = (f === 'all' || cats.indexOf(f) !== -1) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
